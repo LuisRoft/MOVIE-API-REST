@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # apiKey.js (API KEY)
-.src/apiKey.js
+src/apiKey.js
