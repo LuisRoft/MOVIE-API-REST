@@ -1,0 +1,24 @@
+{
+  "name": "movie-api-rest",
+  "version": "1.0.0",
+  "description": "Project applying knowledge about javaScript using the movieDB API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisRoft/MOVIE-API-REST.git"
+  },
+  "keywords": [
+    "javaScript",
+    "axios",
+    "api"
+  ],
+  "author": "LuisRoft",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuisRoft/MOVIE-API-REST/issues"
+  },
+  "homepage": "https://github.com/LuisRoft/MOVIE-API-REST#readme"
+}
