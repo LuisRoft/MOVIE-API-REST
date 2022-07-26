@@ -49,10 +49,11 @@ body {
 
 .header__arrow {
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .header__title-category {
-    margin: 20px 0;
+    margin-bottom: 20px;
     color: white;
 }
 
@@ -98,7 +99,6 @@ body {
 }
 
 .header__form > button {
-    width: 10%;
     padding-left: 10px;
     border-left: 1px solid rgba( 255, 255, 255, 0.18 );    
 }
@@ -129,12 +129,13 @@ body {
     border-radius: 10px;
     -webkit-backdrop-filter: blur( 4px );
     border: none;
+    cursor: pointer;
 }
 
 
 
 /*  */
-.trends__movies {
+.trends__movies, .upcoming__movies {
     padding: 0 25px;
     width: 100%;
     display: grid;
@@ -148,7 +149,7 @@ body {
     scroll-snap-type: x proximity;
 }
 
-.trends__movies > .movies__movie-container {
+.trends__movies > .movies__movie-container, .upcoming__movies > .movies__movie-container, .relatedMovies__movies-container > .movies__movie-container  {
     display: grid;
     place-items: center;
     width: 150px;
@@ -235,15 +236,11 @@ body {
     scroll-snap-align: center;
     text-align: center;
     width: max-content;
-    
-}
-
-.categories__list > .category__container > .category__tittle {
     color: #FFFFFF;
     font-size: 9px;
-    font-weight: 300;    
+    font-weight: 300; 
+    cursor: pointer;    
 }
-
 
 
 /*  */
@@ -264,6 +261,7 @@ body {
     width: 100%;   
     padding: 0 35px;
     margin: 20px 0;
+    padding-bottom: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 10px;
@@ -273,21 +271,13 @@ body {
 
 
 /*  */
-.bodyImage {
-    min-height: 500px;
-    background-image: url(../assets/imgs/thor.jpg);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
-}
 
 .movieDetail-container {
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 60%;
     border-radius: 30px 30px 0 0;
-    padding: 55px 35px;
+    padding: 45px 35px 55px 35px;
     background: var(--background);
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
@@ -296,17 +286,9 @@ body {
     color: #FFFFFF;
     text-align: center;
     font-weight: 700;
-    font-size: 60px;
-    line-height: 81px;
-}
-
-.movieDetail__subTittle {
-    color: #FFFFFF;
-    opacity: 50%;
-    text-align: center;
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 27px;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 20px;
 }
 
 .movieDetail__info {
@@ -315,34 +297,46 @@ body {
     margin-bottom: 20px;
 }
 
+.info__container {
+    width: 80%;
+    flex-wrap: wrap;
+}
+
 .info__container, .info__interaction {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.category-container, .movieDetail__ageRange {
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.categories-container > .category__container, .ageRange__tittle {
     color: #FFFFFF;
     font-weight: 500;
     font-size: 10px;
-    padding: 2px 10px;
+    padding: 2px 8px;
     background: rgba(125, 179, 214, 0.4);    
     box-shadow: 0 2px 6px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     border-radius: 8px;
     -webkit-backdrop-filter: blur( 4px );
+    cursor: pointer;
 }
 
-.movieDetail__rating {
+.rating__tittle {
     background: #F5C518;
-    padding: 2px 10px;
+    padding: 2px 8px;
     border-radius: 8px;
     box-shadow: 0 2px 6px 0 rgba( 31, 38, 135, 0.37 );
-    font-weight: 700;
+    font-weight: 500;
     font-size: 10px;
 }
 
-.movieDetail__sinopsis {
+.movieDetail__overview {
     color: rgba(255, 255, 255, 0.75);
     font-weight: 500;
     font-size: 12px;
@@ -367,10 +361,10 @@ body {
     align-items: center;
 }
 
-.relatedMovies__movie {
+/* .relatedMovies__movie {
     width: 160px;
     scroll-snap-align: center;
-}
+} */
 
 /*  */
 .footer-container {
@@ -383,8 +377,8 @@ body {
 .footer-container > p {
     text-align: center;
     margin: 0 auto;
-    width: 180px;
-    padding: 8px 5px;
+    width: max-content;
+    padding: 8px 20px;
     color: #FFFFFF;
     font-weight: 300;
     background: rgba(125, 179, 214, 0.25);    

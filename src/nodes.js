@@ -16,9 +16,11 @@ const footerSection = $('#footerPreview');
 const headerWelcome = $('.header__welcome');
 const headerSearch = $('#searchForm');
 const trendsTittle = $('.trends__title');
-const trendsMovies = $('.trends__movies');
 const categoryTittle = $('.categories__title');
 const categoriesList = $('.categories__list');
+const categoriesContainer = $('.categories-container');
+const ageRangeContainer = $('.movieDetail__ageRange');
+const ratingContainer = $('.movieDetail__rating');
 const genericListMovies = $('.genericList__movie-container');
 const movieDetailInfo = $('.movieDetails__info');
 const infoContainer = $('.info__container');
@@ -32,3 +34,11 @@ const arrowBack = $('#arrowBack');
 const searchButton = $('#searchButton');
 const headerArrow = $('.header__arrow');
 const headerTittleCategory = $('.header__title-category');
+const searchInput = $('#searchInput');
+const ageRangeTittle = $('.rating__tittle');
+const movieTittle = $('.movieDetail__tittle');
+const movieOverview = $('.movieDetail__overview');
+
+// Nodes 
+const trendsMovies = document.querySelector('#trendingPreview .trends__movies');
+const upcomingMovies = document.querySelector('#upcomingPreview .upcoming__movies');

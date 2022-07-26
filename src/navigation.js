@@ -1,7 +1,15 @@
-import { getTrendingMovies, getUpcomingMovies, getCategories } from './main.js';
+import { getTrendingMovies, getUpcomingMovies, getCategories, getMoviesBySearch, getAllTrendingMovies, getMoviesByCategory, getMovieDetail } from './main.js';
 
-searchButton.addEventListener('click', () =>  location.hash = '#search=');
-arrowBack.addEventListener('click', () =>  location.hash = '#home');
+searchButton.addEventListener('click', event =>  {
+    const query = searchInput.value;
+    const queryFormatted = query.split(' ').join('+');
+    query !== '' ? location.hash = `#search=${queryFormatted}` : event.preventDefault();
+});
+
+arrowBack.addEventListener('click', () =>  {
+    document.domain !== '127.0.0.1' ? location.hash = '#home' : history.back();
+});
+
 trendingButton.addEventListener('click', () =>  location.hash = '#trends');
 
 window.addEventListener('DOMContentLoaded', navigator, false);
@@ -15,17 +23,17 @@ function navigator() {
     homePage()
 };
 
-function trendsPage() {
-    console.log('trends');
-    
+function trendsPage() {    
+    window.scrollTo(0, 0);
 
+    headerTittleCategory.innerHTML = 'Trending';
     headerArrow.classList.remove('fixed');
     bodyBackgroundImage.classList.remove('bodyImage');
     headerArrow.classList.remove('inactive');
     genericListSection.classList.remove('inactive');
+    headerTittleCategory.classList.remove('inactive');
     
 
-    headerTittleCategory.classList.add('inactive');
     headerSearch.classList.add('inactive');
     headerWelcome.classList.add('inactive');
     trendingSection.classList.add('inactive');
@@ -33,33 +41,38 @@ function trendsPage() {
     upcomingSection.classList.add('inactive');
     movieDetailsSection.classList.add('inactive');
     footerSection.classList.add('inactive');
+
+    getAllTrendingMovies();
 }
 
 function searchPage() {
-    console.log('search');
+    window.scrollTo(0, 0);
 
     headerArrow.classList.remove('fixed');
     bodyBackgroundImage.classList.remove('bodyImage');
     headerArrow.classList.remove('inactive');
-    headerTittleCategory.classList.remove('inactive');
     genericListSection.classList.remove('inactive');
     headerSearch.classList.remove('inactive');
     
+    headerTittleCategory.classList.add('inactive');
     headerWelcome.classList.add('inactive');
     trendingSection.classList.add('inactive');
     categoriesSection.classList.add('inactive');
     upcomingSection.classList.add('inactive');
     movieDetailsSection.classList.add('inactive');
     footerSection.classList.add('inactive');
+    const query = location.hash.split("=")[1];
+    const newQuery = query.split('+').join(' ');
+    getMoviesBySearch(newQuery);
 }
 
 function movieDetailsPage() {
-    console.log('movies');
+    window.scrollTo(0, 0);
+
     headerArrow.classList.remove('inactive');
     movieDetailsSection.classList.remove('inactive');
 
     headerArrow.classList.add('fixed');
-    bodyBackgroundImage.classList.add('bodyImage');
     headerTittleCategory.classList.add('inactive');
     headerWelcome.classList.add('inactive');
     headerSearch.classList.add('inactive');
@@ -68,10 +81,14 @@ function movieDetailsPage() {
     upcomingSection.classList.add('inactive');
     genericListSection.classList.add('inactive');
     footerSection.classList.add('inactive');
+    
+    const movieId = location.hash.split("=")[1];
+    getMovieDetail(movieId);
+    
 }
 
 function categoriesPage() {
-    console.log('categories');
+    window.scrollTo(0, 0);
     
     headerArrow.classList.remove('fixed');
     bodyBackgroundImage.classList.remove('bodyImage');
@@ -86,10 +103,13 @@ function categoriesPage() {
     upcomingSection.classList.add('inactive');
     movieDetailsSection.classList.add('inactive');
     footerSection.classList.add('inactive');
+
+    const id = location.hash.split("=")[1].split('-')[0];
+    getMoviesByCategory(id);    
 }
 
 function homePage() {
-    console.log('home');
+    window.scrollTo(0, 0);
 
     bodyBackgroundImage.classList.remove('bodyImage');
     headerWelcome.classList.remove('inactive');
