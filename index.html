@@ -1,124 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;500;600;700&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="./assets/icons/favicon.png" type="image/x-icon">
-        <link rel="stylesheet" href="./styles/stylesReset.css">
-        <link rel="stylesheet" href="./styles/app.css">
-        <title>Cineman</title>
-    </head>
-    <body id="bodyBackground">
-        <header id="header" class="header-container">
-            <nav class="header__nav">
-                <img src="./assets/icons/home.svg" alt="">
-                <img src="./assets/icons/favorite.svg" alt="">
-                <img src="./assets/icons/ticket.svg" alt="">
-                <img src="./assets/icons/account.svg" alt="">
-                <img src="./assets/icons/shuffle.svg" alt="">
-            </nav>
-            <img id="arrowBack" src="./assets/icons/backArrow.svg" alt="arrow" class="header__arrow">
-            <div class="header__welcome">
-                <p>Hello, <b>Human!</b></p>
-                <img src="./assets/icons/bell.svg" alt="bell">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./styles/stylesReset.css" />
+    <link rel="stylesheet" href="./styles/app.css" />
+    <title>Cineman</title>
+  </head>
+  <body id="bodyBackground">
+    <header id="header" class="header-container">
+      <nav class="header__nav">
+        <img src="./assets/icons/home.svg" alt="home icon" id="home-shortcut"/>
+        <img src="./assets/icons/favorite.svg" alt="favorite icon" id="favorite-shortcut"/>
+        <img src="./assets/icons/ticket.svg" alt="ticket icon" />
+        <img src="./assets/icons/account.svg" alt="account icon" />
+        <img src="./assets/icons/shuffle.svg" alt="shuffle icon" />
+      </nav>
+      <img
+        id="arrowBack"
+        src="./assets/icons/backArrow.svg"
+        alt="arrow"
+        class="header__arrow"
+      />
+      <div class="header__welcome">
+        <p>Hello, <b>Human!</b></p>
+        <div class="header__welcome__left">
+          <select name="languages" id="languagesOptions">
+            <option value="en" id="en">English</option>
+            <option value="es" id="es">Spanish</option>
+          </select>
+          <img src="./assets/icons/bell.svg" alt="bell" />
+        </div>
+
+      </div>
+      <h1 class="header__title-category">Action</h1>
+      <form id="searchForm" class="header__form">
+        <input id="searchInput" type="text" placeholder="Search" />
+        <button type="button" id="searchButton">
+          <img src="./assets/icons/search.svg" alt="searchIcon" />
+        </button>
+      </form>
+    </header>
+    <main id="main" class="main-container">
+      <section class="main__trends" id="trendingPreview">
+        <div class="trends__title">
+          <h2>Most popular</h2>
+          <button id="trendingButton">Ver mas</button>
+        </div>
+        <article class="trends__movies">
+            <picture class="skeleton skeleton__img"></picture>
+            <picture class="skeleton skeleton__img"></picture>
+            <picture class="skeleton skeleton__img"></picture>
+            <picture class="skeleton skeleton__img"></picture>
+            <picture class="skeleton skeleton__img"></picture>
+        </article>
+      </section>
+
+      <section class="main__categories" id="categoriesPreview">
+        <div class="categories__title">
+          <span class="title__icon"></span>
+          <h2>Genres</h2>
+        </div>
+        <article class="categories__list">
+            <div class="skeleton skeleton__category"></div>
+            <div class="skeleton skeleton__category"></div>
+            <div class="skeleton skeleton__category"></div>
+            <div class="skeleton skeleton__category"></div>
+            <div class="skeleton skeleton__category"></div>
+            <div class="skeleton skeleton__category"></div>
+        </article>
+      </section>
+
+      <section id="upcomingPreview" class="upcoming-container">
+        <h2>Upcoming releases</h2>
+        <article class="upcoming__movies">
+            <picture class="skeleton skeleton__img"></picture>
+            <picture class="skeleton skeleton__img"></picture>
+            <picture class="skeleton skeleton__img"></picture>
+            <picture class="skeleton skeleton__img"></picture>
+            <picture class="skeleton skeleton__img"></picture>
+        </article>
+      </section>
+
+      <section id="genericList" class="genericList-container">
+        <!-- <picture class="genericList__movie-container">
+                <img src="./assets/imgs/stg4.jpg" alt="movie" class="movie__img">
+              </picture>
+              <picture class="genericList__movie-container">
+                <img src="./assets/imgs/stg4.jpg" alt="movie" class="movie__img">
+              </picture>
+              <picture class="genericList__movie-container">
+                <img src="./assets/imgs/stg4.jpg" alt="movie" class="movie__img">
+              </picture>
+              <picture class="genericList__movie-container">
+                <img src="./assets/imgs/stg4.jpg" alt="movie" class="movie__img">
+              </picture> -->
+      </section>
+
+      <section id="movieDetail" class="movieDetail-container inactive">
+        <h1 class="movieDetail__tittle">Thor</h1>
+        <article class="movieDetail__info">
+          <section class="info__container">
+            <div class="categories-container">
+              <!-- <p class="category__tittle">Action</p> -->
             </div>
-            <h1 class="header__title-category">Action</h1>
-            <form id="searchForm" class="header__form">
-                <input  id="searchInput" type="text" placeholder="Search">
-                <button type="button" id="searchButton"><img src="./assets/icons/search.svg" alt="searchIcon"></button>
-            </form>
-        </header>    
-        <main id="main" class="main-container">
-            <section class="main__trends" id="trendingPreview">
-                <div class="trends__title">
-                    <h2>Most popular</h2>
-                    <button id="trendingButton">Ver mas</button>
-                </div>
-                <article class="trends__movies">
-                    <!-- <picture class="movies__movie-container">
-                        <img src="./assets/imgs/fantasticFour.png" alt="name of the movie" class="movie__img">
-                    </picture> -->
-                </article>
-            </section>
+            <div class="movieDetail__ageRange">
+              <!-- <p class="ageRange__tittle">18+</p> -->
+            </div>
+            <div class="movieDetail__rating">
+              <!-- <p class="rating__tittle">9.4</p> -->
+            </div>
+          </section>
+          <section class="info__interaction">
+            <img src="./assets/icons/share.svg" alt="share" />
+            <img src="./assets/icons/favoriteSmall.svg" alt="favorite" />
+          </section>
+        </article>
 
-            <section class="main__categories" id="categoriesPreview">
-                <div class="categories__title">
-                    <span class="title__icon"></span>
-                    <h2>Genres</h2>
-                </div>
-                <article class="categories__list">
-                    <!-- <div class="category__container">
-                        <h3 class="category__tittle">Action</h3>
-                    </div> -->
-                </article>
-            </section>
+        <p class="movieDetail__overview">
+          When the Dark Elves attempt to plunge the universe into darkness, Thor
+          must embark on a perilous and personal journey that will reunite him
+          with doctor Jane.
+        </p>
 
-            <section id="upcomingPreview" class="upcoming-container">
-                <h2>Upcoming releases</h2>
-                <article class="upcoming__movies">
-                    <!-- <div class="movies__movie-container">
-                        <img src="./assets/imgs/freedom.png" alt="movie upcoming" class="movie__img">
-                    </div> -->
-                </article>
-            </section>
-
-            <section id="genericList" class="genericList-container">
-                <!-- <picture class="genericList__movie-container">
-                    <img src="./assets/imgs/stg4.jpg" alt="movie" class="movie__img">
-                </picture>
-                <picture class="genericList__movie-container">
-                    <img src="./assets/imgs/stg4.jpg" alt="movie" class="movie__img">
-                </picture>
-                <picture class="genericList__movie-container">
-                    <img src="./assets/imgs/stg4.jpg" alt="movie" class="movie__img">
-                </picture>
-                <picture class="genericList__movie-container">
-                    <img src="./assets/imgs/stg4.jpg" alt="movie" class="movie__img">
-                </picture> -->
-            </section>
-
-            <section id="movieDetail" class="movieDetail-container">
-                <h1 class="movieDetail__tittle">Thor</h1>
-                <article class="movieDetail__info">
-                    <section class="info__container">
-                        <div class="categories-container">
-                            <!-- <p class="category__tittle">Action</p> -->
-                        </div>
-                        <div class="movieDetail__ageRange">
-                            <!-- <p class="ageRange__tittle">18+</p> -->
-                        </div>
-                        <div class="movieDetail__rating">
-                            <!-- <p class="rating__tittle">9.4</p> -->
-                        </div>
-                    </section>
-                    <section class="info__interaction">
-                        <img src="./assets/icons/share.svg" alt="share">
-                        <img src="./assets/icons/favoriteSmall.svg" alt="favorite">
-                    </section>
-                </article>
-                
-                <p class="movieDetail__overview">When the Dark Elves attempt to plunge the universe into darkness, Thor must embark on a perilous and personal journey that will reunite him with doctor Jane ...More</p>
-
-                <article class="movieDetail__relatedMovies">
-                    <h2>Related Movies</h2>
-                    <div class="relatedMovies__movies-container">
-                        <!-- <picture class="relatedMovies__movie">
-                            <img src="./assets/imgs/stg4.jpg" alt="Related Movie" class="movie__img">
-                        </picture> -->
-                    </div>
-                </article>
-            </section>
-        </main>
-        <footer class="footer-container" id="footerPreview">
-            <p>Made with love by @LuisRoftl, designed made by Ferenc Nagy</p>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./src/nodes.js"></script>
-        <script type="module" src="./src/main.js"></script>
-        <script type="module" src="./src/navigation.js"></script>
-    </body>
+        <article class="movieDetail__relatedMovies">
+          <h2>Related Movies</h2>
+          <div class="relatedMovies__movies-container">
+            <!-- <picture class="relatedMovies__movie">
+                    <img src="./assets/imgs/stg4.jpg" alt="Related Movie" class="movie__img">
+                  </picture> -->
+          </div>
+        </article>
+      </section>
+      <section id="liked-section"></section>
+    </main>
+    <footer class="footer-container" id="footerPreview">
+        <p>Made with love by @LuisRoftl, designed by Ferenc Nagy</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./src/nodes.js"></script>
+    <script type="module" src="./src/navigation.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>

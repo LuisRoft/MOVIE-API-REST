@@ -11,6 +11,8 @@ const upcomingSection = $('#upcomingPreview');
 const genericListSection = $('#genericList');
 const movieDetailsSection = $('#movieDetail');
 const footerSection = $('#footerPreview');
+const likedSection = $('#liked-section');
+const likedArticle = $('.liked__movies');
 
 // List and containers
 const headerWelcome = $('.header__welcome');
@@ -27,6 +29,7 @@ const infoContainer = $('.info__container');
 const infoInteraction = $('.info__interaction');
 const relatedMovies = $('.movieDetail__relatedMovies');
 const relatedMoviesContainer = $('.relatedMovies__movies-container');
+const languagesOptions = $('#languagesOptions');
 
 // Elements
 const trendingButton = $('#trendingButton');
@@ -38,6 +41,9 @@ const searchInput = $('#searchInput');
 const ageRangeTittle = $('.rating__tittle');
 const movieTittle = $('.movieDetail__tittle');
 const movieOverview = $('.movieDetail__overview');
+const homeShortCut = $('#home-shortcut');
+const favoriteShortCut = $('#favorite-shortcut');
+
 
 // Nodes 
 const trendsMovies = document.querySelector('#trendingPreview .trends__movies');
